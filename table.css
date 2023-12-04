@@ -1,0 +1,142 @@
+/* 
+File: table.css
+GUI Assignment: Creating an Interactive Dynamic Table
+Paschal Ojatabu , UMass Lowell Computer Science,
+Paschal_Ojatabu@student.uml.edu
+This file provides the CSS styling for the form and the multiplication table.
+Copyright (c) 2023 by Paschal. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by PO on December 3, 2023 at 6:00pM
+
+/*Clearing default spacing*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+}
+/*Form*/
+/*display: block starts error message, inputs, and labels on new lines*/
+.error {
+    color: red;
+}
+label, input {
+    display: block;
+}
+label {
+    margin-top: 15px;
+}
+input:last-child {
+    margin-top: 20px;
+}
+.btn, legend {
+    margin-left: 15px;
+}
+
+/*Table*/
+/*overflow with set sizew provides scrolling capability*/
+#mult_table {
+    overflow: auto;
+    height: 500px;
+    width: 775px;
+    margin-bottom: 50px;
+}
+table {
+    position: relative;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+/*selects every second child that is table data within the table*/
+table td:nth-child(2n) {
+    width: 50px;
+    padding: 5px;
+    background-color: lightyellow;
+}
+/*sticky positioning forces the 1st row to stay when scrolling past*/
+/*table tr:nth-child(1) td selects the table data of the 1st <tr> element in a table (1st row of table) https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child*/
+table tr:nth-child(1) td {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: lightgreen;
+}
+/*selects the 1st child of the 1st <tr> element in a table (top left corner cell)*/
+table tr:nth-child(1) td:nth-child(1) {
+    left: 0;
+    z-index: 3;
+    background-color: lightyellow;
+}
+table td {
+    text-align: center;
+    white-space: pre;
+    font-size: large;
+}
+/*selects the 1st child of the table data of each table row in a table (1st column)*/
+table tr td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    padding-left: 100px;
+    z-index: 1;
+    background-color: lightblue;
+    font-size: 2em;
+    font-weight: bold;
+}
+/*footer https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c
+/*/
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+#content-wrap {
+    padding-bottom: 2.5rem;
+   /* Footer height */
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+   /* Footer height */
+    text-align: center;
+}
+/* tableTabs bg */
+#tableTabs {
+    background: white;
+    display: block;
+}
+.ui-tabs .ui-tabs-nav {
+    height: 37px;
+    padding-top: 50px;
+}
+/* Slider background*/
+.ui-slider-horizontal {
+    background: lightblue;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/*handle color*/
+.ui-slider-horizontal .ui-slider-handle {
+    background: lightgreen;
+    border: none;
+}
+/* Nav background */
+.ui-tabs-nav {
+    background: grey;
+    color: white;
+}
+/* background of tabs */
+.tab.ui-state-default {
+    background: lightblue;
+    color: white;
+}
+/* background of active tabs */
+.tab.ui-state-active {
+    background: lightgreen;
+     color: black;
+}
